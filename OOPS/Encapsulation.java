@@ -1,24 +1,13 @@
 package OOPS;
 
-abstract class Car {
-    abstract void start();
 
-    abstract void stop();
-
-    abstract void gearShift(int g);
-
-    abstract void breaks();
-
-    abstract void accelerate();
-
-}
-
-class SportCar extends Car {
-    String brand;
-    String model;
-    boolean isEngineOn;
-    int currentSpeed;
-    int currentGear;
+class SportCar {
+    private String brand;
+    private String model;
+    private boolean isEngineOn;
+    private int currentSpeed;
+    private int currentGear;
+    private String tyre;
 
     SportCar(String b, String m){
          brand = b;
@@ -26,7 +15,23 @@ class SportCar extends Car {
          isEngineOn = false;
          currentGear = 0;
          currentSpeed = 0;
+         tyre = "MRF";
     }
+
+    // getter and setter
+
+    int getcurrentSpeed(){
+        return this.currentSpeed;
+    }
+
+    String getTyre(){
+        return this.tyre;
+    }
+
+    void setTyre(String tyre){
+        this.tyre = tyre;
+    }
+
 
     void start(){
         isEngineOn = true;
@@ -71,7 +76,7 @@ class SportCar extends Car {
    
 }
 
-public class AboutCar {
+public class Encapsulation {
     public static void main(String[] args) {
         SportCar sp = new SportCar("Roll Royal", "Version 10");
         sp.start();
@@ -82,6 +87,8 @@ public class AboutCar {
         sp.accelerate();
         sp.breaks();
         sp.stop();
+
+        System.out.println(sp.getcurrentSpeed());
 
 
     }
