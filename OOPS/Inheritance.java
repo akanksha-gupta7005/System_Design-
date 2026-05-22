@@ -25,7 +25,7 @@ class SportCar {
         System.out.println(brand + " " + model + " " + ": Engine is off Cannot accelerate");
             return;
         }
-        currentSpeed += 20;
+        currentSpeed += 70;
         System.out.println(brand + " " + model + " " + ": Accelerating to  :" + currentSpeed + "km/h");
 
     }
@@ -47,7 +47,7 @@ class SportCar {
 }
 
 class ManualCar extends SportCar{
-        private int currentGear = 0;
+        private int currentGear;
 
         ManualCar(String b, String m){
             super(b, m);
@@ -80,8 +80,9 @@ class ElectricCar extends SportCar{
 public class Inheritance {
     public static void main(String[] args) {
         ManualCar m = new ManualCar("Honda", "Honda City");
+
         m.start();
-        m.gearShift(3);
+        m.gearShift(10);
         m.accelerate();
         m.breaks();
         m.stop();
