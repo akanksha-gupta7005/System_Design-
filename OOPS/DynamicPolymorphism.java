@@ -1,5 +1,7 @@
 package OOPS;
 
+
+// Dynamic polymorphism
  class SportCar {
     protected String brand;
     protected String model;
@@ -31,7 +33,7 @@ package OOPS;
         System.out.println("Accelerating");
      }
 
-     void breaks(){
+     void breake(){
         System.out.println("Breaking");
      }
 }
@@ -62,7 +64,7 @@ class ManualCar extends SportCar {
     }
 
     // override the method
-    void breaks() {
+    void breake() {
         currentSpeed -= 10;
         if (currentSpeed < 0)
             currentSpeed = 0; 
@@ -102,7 +104,7 @@ class ElectricCar extends SportCar {
     }
 
     // override the method
-    void breaks(){
+    void breake(){
         currentSpeed -= 15;
         if(currentSpeed < 0) currentSpeed = 0;
         System.out.println(brand + " " + model + " " + ": Regenerative! Speed is now  :" + currentSpeed + "km/h. Battery at" + batteryRate + "%");
@@ -112,13 +114,13 @@ class ElectricCar extends SportCar {
 
 }
 
-public class Polymorphism {
+public class DynamicPolymorphism {
 
     public static void main(String[] args) {
         ManualCar m = new ManualCar("Honda", "Honda City");
         m.start();
         m.accelerate();
-        m.breaks();
+        m.breake();
 
         System.out.println("......................................................................");
 
@@ -126,7 +128,7 @@ public class Polymorphism {
         ElectricCar e = new ElectricCar("Tesla", "tesla Model Y");
         e.start();
         e.accelerate();
-        e.breaks();
+        e.breake();
         
     }
 }
